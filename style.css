@@ -5,6 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: large;
+    background-color:peachpuff
 }
 
 .container {
@@ -13,4 +14,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#image {
+    height: 200px;
+    width: 200px;
+    visibility: hidden;
 }
