@@ -11,6 +11,7 @@ const getCaraCruz = (trueOrFalse) => trueOrFalse ? "Cara" : "Cruz";
 const flipCoin = () => {
     const result = getCaraCruz(getTrueorFalse(getRandomNumber()));
     document.getElementById("message").innerHTML = result;
+    document.getElementById("message").style.visibility = "hidden";
     return result
 }
 
@@ -22,8 +23,14 @@ const changeMessage = () => document.getElementById("buttonFlipCoin").innerText 
 
 // Adjusts the source of the image based on the coin flip result and ensures the image is visible.
 const changeImage = (result) => {
-    webImage.src = result === "Cara" ? "./img/head_cat.png" : "./img/tail_cat.png";
-    webImage.style.visibility = "visible";
+    webImage.src = "./img/penguin_coin.gif"
+
+    setTimeout(() => {
+        webImage.src = result === "Cara" ? "./img/head_cat.png" : "./img/tail_cat.png";
+        webImage.style.visibility = "visible";
+    }, 1000)
+
+
 }
 
 // Attaches click event listeners to the "buttonFlipCoin" button to trigger the coin flip, update the button text, and change the display image accordingly.
@@ -31,4 +38,6 @@ document.getElementById("buttonFlipCoin").addEventListener("click", () =>{
     const result = flipCoin();
     changeMessage();
     changeImage(result)
+    setTimeout(() => {document.getElementById("message").style.visibility = "visible";}, 1000)
+    
 })
