@@ -25,9 +25,9 @@ const changeMessage = () => document.getElementById("buttonFlipCoin").innerText 
 const changeImage = (result) => {
     webImage.src = "./img/penguin_coin.gif"
 
+    webImage.style.visibility = "visible";
     setTimeout(() => {
         webImage.src = result === "Cara" ? "./img/head_cat.png" : "./img/tail_cat.png";
-        webImage.style.visibility = "visible";
     }, 1000)
 
 
